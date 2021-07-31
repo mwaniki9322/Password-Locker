@@ -44,7 +44,7 @@ class TestCredentials(unittest.TestCase):
         test to check if multiple contacts can be saved
         '''
         self.new_credentials.save_credentials()
-        test_credentials=Credentials('test','credentials')
+        test_credentials=Credentials('testgram','pass')
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -55,12 +55,24 @@ class TestCredentials(unittest.TestCase):
         delete method to delete credentials
         '''
         self.new_credentials.save_credentials()
-        test_credentials=Credentials('test','credentials')
+        test_credentials=Credentials('testgram','pass')
         test_credentials.save_credentials()
 
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
-    
+
+#find credential credential by platform
+
+    def test_find_credential_by_platform(self):
+        '''
+        search for contact by platform
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials=Credentials('testgram','pass')
+        test_credentials.save_credentials()
+        
+        found_credentials=Credentials.find_by_platform('testgram')
+        self.assertEqual(found_credentials.password)
         
 
 if __name__=='__main__':
