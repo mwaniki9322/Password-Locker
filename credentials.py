@@ -3,9 +3,10 @@ class Credentials:
     a class generates a new instance credentials
     '''
     credentials_list=[]
-    def __init__(self,platform,password):
+    def __init__(self,platform,email,password):
         self.platform=platform
         self.password=password
+        self.email=email
 
     def save_credentials(self):
 

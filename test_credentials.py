@@ -19,13 +19,14 @@ class TestCredentials(unittest.TestCase):
         '''
         Define a set of instructions to be executed before each task
         '''
-        self.new_credentials=Credentials('instagram','mwanikiiii')
+        self.new_credentials=Credentials('instagram','res@gmail.com','mwanikiiii')
 
     def test_init(self):
         '''
         check if test object has be instatiated
         '''
         self.assertEqual(self.new_credentials.platform,'instagram')
+        self.assertEqual(self.new_credentials.email,'res@gmail.com')
         self.assertEqual(self.new_credentials.password,'mwanikiiii')       
 
 #save credentials test
@@ -44,7 +45,7 @@ class TestCredentials(unittest.TestCase):
         test to check if multiple contacts can be saved
         '''
         self.new_credentials.save_credentials()
-        test_credentials=Credentials('testgram','pass')
+        test_credentials=Credentials('testgram','test@gmail.com','pass')
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -55,7 +56,7 @@ class TestCredentials(unittest.TestCase):
         delete method to delete credentials
         '''
         self.new_credentials.save_credentials()
-        test_credentials=Credentials('testgram','pass')
+        test_credentials=Credentials('testgram','test@gmail.com','pass')
         test_credentials.save_credentials()
 
         self.new_credentials.delete_credentials()
@@ -68,11 +69,11 @@ class TestCredentials(unittest.TestCase):
         search for contact by platform
         '''
         self.new_credentials.save_credentials()
-        test_credentials=Credentials('testgram','pass')
+        test_credentials=Credentials('testgram','test@gmail','pass')
         test_credentials.save_credentials()
         
         found_credentials=Credentials.find_by_platform('testgram')
-        self.assertEqual(found_credentials.password,test_credentials.password)
+        self.assertEqual(found_credentials.email,test_credentials.email)
 
 #test to check if object exists
     
@@ -82,7 +83,7 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.new_credentials.save_credentials()
-        test_credentials=Credentials('testgram','pass') # new contact
+        test_credentials=Credentials('testgram','test@gmail','pass') # new contact
         test_credentials.save_credentials()
 
         credential_exists = Credentials.credentials_exists("instagram")
