@@ -72,8 +72,34 @@ class TestCredentials(unittest.TestCase):
         test_credentials.save_credentials()
         
         found_credentials=Credentials.find_by_platform('testgram')
-        self.assertEqual(found_credentials.password)
-        
+        self.assertEqual(found_credentials.password,test_credentials.password)
+
+#test to check if object exists
+    
+    def test_credentials_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the credentials.
+        '''
+
+        self.new_credentials.save_credentials()
+        test_credentials=Credentials('testgram','pass') # new contact
+        test_credentials.save_credentials()
+
+        credential_exists = Credentials.credentials_exists("instagram")
+
+        self.assertTrue(credential_exists)
+
+#display the credentials 
+
+    def test_display_credentials(self):
+        '''
+        display the credentials
+        '''
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
+
+
+
 
 if __name__=='__main__':
     unittest.main()
