@@ -19,3 +19,15 @@ def del_credentials(credentials):
     function to delete credentials
     '''
     Credentials.delete_credentials()
+
+def find_credentials(platform):
+    '''
+    Function that finds a credentials by number and returns the credentials
+    '''
+    return Credentials.find_by_platform(platform)
+
+def check_existing_credentials(platform):
+    '''
+    Function that check if a credentials exists with that platform and return a Boolean
+    '''
+    return Credentials.credentials_exists(platform)
