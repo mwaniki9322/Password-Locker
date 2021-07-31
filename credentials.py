@@ -14,3 +14,12 @@ class Credentials:
         '''
         
         Credentials.credentials_list.append(self)
+
+#delete credentials
+
+    def delete_credentials(self):
+        '''
+        delete a saved credentials
+        '''
+    
+        Credentials.credentials_list.remove(self)
