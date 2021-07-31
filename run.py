@@ -31,3 +31,9 @@ def check_existing_credentials(platform):
     Function that check if a credentials exists with that platform and return a Boolean
     '''
     return Credentials.credentials_exists(platform)
+
+
+def main():
+    print('hello now that you have logged in you can access your credentials.What would you like to do?')
+    while True:
+        print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find credentials, ex -exit the credential list ")
