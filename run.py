@@ -7,3 +7,9 @@ def create_credentials(platform,email,password):
     '''
     new_credentials= Credentials(platform,email,password)
     return new_credentials
+
+def save_credentials(credentials):
+    '''
+    Function to save credentials
+    '''
+    Credentials.save_credentials()
