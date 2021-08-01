@@ -1,6 +1,8 @@
 #!/usr/bin/env python3.9
 from credentials import Credentials
+from user import User
 
+#credentials behaviour functions
 
 def create_credentials(platform,email,password):
     '''
@@ -49,8 +51,31 @@ def display_credentials():
     return Credentials.display_credentials()
 
 
+#user behaviour functions
+def create_user(username,password):
+    '''
+    Function to create a new user
+    '''
+    new_user = User(username,password)
+    return new_user
 
+def save_user(user):
+    '''
+    Function to save user
+    '''
+    User.save_user(user)
 
+def del_user(user):
+    '''
+    Function to delete a user
+    '''
+    User.delete_user()
+
+def find_contact(username):
+    '''
+    Function that finds a user by username and returns the user
+    '''
+    return User.find_by_username(username)
 
 
 
