@@ -85,9 +85,15 @@ def check_existing_users(username):
 
 def display_users():
     '''
-    Function that returns all the saved contacts
+    Function that returns all the saved users
     '''
     return User.display_users()
+
+def generate_password():
+    '''
+    Function that returns a generated password
+    '''
+    return User.generate_password()
 
 
     
@@ -101,7 +107,7 @@ def main():
     print('\n')
 
     while True:
-        print('Please choose action ca-create account')
+        print('Please choose action ca-create account ex-exit')
         short_codes=input()
         if short_codes=='ca':
             print('New account')
@@ -110,15 +116,31 @@ def main():
             print('Username')
             username=input()
 
+            print('Password')
+            pass_word=generate_password()
+        print(pass_word)
+
+        save_user(create_user(username,pass_word)) # create and save new contact.
+        print ('\n')
+        print(f"New Account {username} password:{pass_word} created")
+        print ('\n')
+
+
+        
+
+        
+    
+
+
 
 
 
      
 
 
-            print("Hello Welcome to your Credential list.")
+        print("Hello Welcome to your Credential list.")
 
-            while True:
+        while True:
                     print("Use these short codes : cc - create a new credentials, dc - display credentials, fc -find a credentials, ex -exit the credential list ")
 
                     short_code = input().lower()

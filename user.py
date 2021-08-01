@@ -64,8 +64,8 @@ class User:
 
             for x in range(0,password_len):
                 password_char=random.choice(char)
-                password=password+password_char
+                pass_word=password+password_char
 
-                print('here is your password :',password)  
+                return pass_word
 
     
