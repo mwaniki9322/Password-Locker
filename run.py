@@ -89,19 +89,36 @@ def display_users():
     '''
     return User.display_users()
 
-def generate_password():
-    '''
-    function to generate password
-    '''
-    return User.generate_password()
+
+    
+
+
 
 
 def main():
-    User.generate_password()
-   
-print("Hello Welcome to your Credential list.")
+    print('Hello Welcome To PASSWORD-LOCKER where your credentials are kept secure')
+    print(f"what would you like to do?")
+    print('\n')
 
-while True:
+    while True:
+        print('Please choose action ca-create account')
+        short_codes=input()
+        if short_codes=='ca':
+            print('New account')
+            print('-'*10)
+
+            print('Username')
+            username=input()
+
+
+
+
+     
+
+
+            print("Hello Welcome to your Credential list.")
+
+            while True:
                     print("Use these short codes : cc - create a new credentials, dc - display credentials, fc -find a credentials, ex -exit the credential list ")
 
                     short_code = input().lower()

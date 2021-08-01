@@ -68,4 +68,4 @@ class User:
 
                 print('here is your password :',password)  
 
-    generate_password()
+    
