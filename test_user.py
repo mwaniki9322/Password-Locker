@@ -71,13 +71,20 @@ class TestUser(unittest.TestCase):
         test to check if we can return a Boolean  if we cannot find the user.
         '''
 
-        self.new_contact.save_contact()
-        test_contact = Contact("Test","user","0711223344","test@user.com") # new contact
-        test_contact.save_contact()
+        self.new_user.save_user
+        test_user = User('test23','testty') # new user
+        test_user.save_user()
 
-        contact_exists = Contact.contact_exist("0711223344")
+        user_exists = User.user_exist("test23")
 
-        self.assertTrue(contact_exists)
+        self.assertTrue(user_exists)
 
+
+    def test_display_all_users(self):
+        '''
+        method that returns a list of all users saved
+        '''
+
+        self.assertEqual(User.display_users(),User.User_list)
 if __name__=='__main__':
         unittest.main()
