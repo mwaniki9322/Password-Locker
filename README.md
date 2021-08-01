@@ -7,7 +7,7 @@
 A python CLI application that allows users to save application credentials such as their username and passwords
 
 ## Application Features
-* Create Accoint
+* Create Account
 * Auto generate Password
 * Platform credentials
 * Create new credentials
@@ -60,4 +60,4 @@ This project was generated with Angular CLI version 12.1.2.
 * If you wish to reach out incase of any issue you can pull request
 
 ### LICENSE
-https://github.com/mwaniki9322/Quote/blob/Master/LICENSE
+https://raw.githubusercontent.com/mwaniki9322/Password-Locker/master/LICENSE
