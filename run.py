@@ -125,6 +125,9 @@ def main():
         print(f"New Account {username} password:{pass_word} created")
         print ('\n')
 
+                    
+
+    
 
         
 
@@ -157,6 +160,7 @@ def main():
 
                             print("Password ...")
                             password = input()
+                    
 
 
 
