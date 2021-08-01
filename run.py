@@ -71,18 +71,37 @@ def del_user(user):
     '''
     User.delete_user()
 
-def find_contact(username):
+def find_user(username):
     '''
     Function that finds a user by username and returns the user
     '''
     return User.find_by_username(username)
 
+def check_existing_users(username):
+    '''
+    Function that check if a user exists with that username and return a Boolean
+    '''
+    return User.user_exist(username)
+
+def display_users():
+    '''
+    Function that returns all the saved contacts
+    '''
+    return User.display_users()
+
+def generate_password():
+    '''
+    function to generate password
+    '''
+    return User.generate_password()
 
 
 def main():
-    print("Hello Welcome to your Credential list.")
+    User.generate_password()
+   
+print("Hello Welcome to your Credential list.")
 
-    while True:
+while True:
                     print("Use these short codes : cc - create a new credentials, dc - display credentials, fc -find a credentials, ex -exit the credential list ")
 
                     short_code = input().lower()
