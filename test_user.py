@@ -8,6 +8,9 @@ from user import User
 
 class TestUser(unittest.TestCase):
 
+    def tearDown(self):
+        User.User_list=[]
+
     def setUp(self):
         '''
         define a set of instructions to be executed before each task
@@ -33,6 +36,48 @@ class TestUser(unittest.TestCase):
         '''
         save multiple users
         '''
+        self.new_user.save_user()
+        test_user=User('test23','testty')
+        test_user.save_user()
+        self.assertEqual(len(User.User_list),2)
+    
+    def test_delete_user(self):
+        '''
+        delete method to delete user
+        '''
+        self.new_user.save_user()
+        test_user=User('test23','testty')
+        test_user.save_user()
+
+        self.new_user.delete_user()
+        self.assertEqual(len(User.User_list),1)
+
+    
+    def test_find_user_by_username(self):
+        '''
+        search for user by platform
+        '''
+        self.new_user.save_user()
+        test_user=User('test23','testty')
+        test_user.save_user()
+        
+        found_user=User.find_by_username('test23')
+        self.assertEqual(found_user.password,test_user.password)
+    
+
+
+    def test_user_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the user.
+        '''
+
+        self.new_contact.save_contact()
+        test_contact = Contact("Test","user","0711223344","test@user.com") # new contact
+        test_contact.save_contact()
+
+        contact_exists = Contact.contact_exist("0711223344")
+
+        self.assertTrue(contact_exists)
 
 if __name__=='__main__':
         unittest.main()
