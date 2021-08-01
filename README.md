@@ -21,7 +21,7 @@ To run the web application on your server use the following steps.
 *  git clone https://github.com/mwaniki9322/Password-Locker.git
 *  cd password-locker
 *  code .
-*  chmod +x run.py
+*  python3.9 chmod +x run.py
 *  ./run.py
 
 ## Technologies Used
@@ -49,13 +49,12 @@ This project was generated with Angular CLI version 12.1.2.
 * INPUT: dc
 * OUTPUT:Display of credentials in the list.
 
-## To Do
-* Store quote entries in a database
-* Improve functionality of voting buttons to ensure one can only like OR dislike a quote
-* Add custom validations to the form to prevent submission of inputs with just whitespace
+### 6. Find credentials by Platform
+* INPUT: Platform
+* OUTPUT:Credentials.
 
 ### Known bugs
-* No bags reported.Raise a bug fix [here](https://github.com/mwaniki9322/Quote.git)
+* No bags reported.Raise a bug fix [here](https://github.com/mwaniki9322/Password-Locker.git)
 
 ## Contact
 * If you wish to reach out incase of any issue you can pull request
